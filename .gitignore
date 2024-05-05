@@ -1,0 +1,5 @@
+*.cfg
+/cache/
+/resources/\[fivem\]/
+/db/
+*.replxx_history
