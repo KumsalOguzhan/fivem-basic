@@ -32,6 +32,19 @@ RegisterCommand('car', function(source, args, rawCommand)
     SetModelAsNoLongerNeeded(vehicleName)
 end)
 
+RegisterCommand('randomcar', function(source, args, rawCommand)
+    local vehicles = GetAllVehicleModels()
+    local veh = vehicles[math.random(1, #vehicles)]
+
+    RequestModel(veh)
+    repeat Wait(10) until HasModelLoaded(veh)
+
+    local veh = CreateVehicle(veh, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), true, false)
+
+    SetPedIntoVehicle(PlayerPedId(), veh, -1)
+    SetModelAsNoLongerNeeded(veh)
+end)
+
 -- Shows a notification on the player's screen
 -- function ShowNotification(text)
 --     SetNotificationTextEntry("STRING")

@@ -17,3 +17,22 @@ AddEventHandler('onClientGameTypeStart', function()
     exports.spawnmanager:setAutoSpawn(true)
     exports.spawnmanager:forceRespawn()
 end)
+
+RegisterCommand('char', function(source, args, rawCommand)
+    local modelName = args[1]
+
+    if IsModelInCdimage(modelName) and IsModelValid(modelName) then
+        RequestModel(modelName)
+
+        while not HasModelLoaded(modelName) do
+            Wait(10)
+        end
+
+        SetPlayerModel(PlayerId(), modelName)
+        SetModelAsNoLongerNeeded(modelName)
+    end
+end)
+
+RegisterCommand('restart', function(source, args, rawCommand)
+    TriggerEvent('onClientGameTypeStart')
+end)

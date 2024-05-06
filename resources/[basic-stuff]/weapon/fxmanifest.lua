@@ -5,4 +5,5 @@ lua54 'yes'
 
 client_scripts {
     'client/client.lua',
+    'cfg/weapons.lua'
 }

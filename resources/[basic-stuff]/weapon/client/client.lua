@@ -5,9 +5,6 @@ RegisterCommand("weapon", function(source, args, rawCommand)
         local weapons = cfg.weapons
 
         for hash, wName in pairs(weapons) do
-            TriggerEvent('chat:addMessage', {
-                args = { wName }
-            })
             GiveWeaponToPed(ped, wName, 999, false, false)
         end
 
