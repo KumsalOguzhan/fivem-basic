@@ -6,7 +6,7 @@ AddEventHandler('onClientGameTypeStart', function()
             x = spawnPos.x,
             y = spawnPos.y,
             z = spawnPos.z,
-            model = 's_m_m_movalien_01'
+            model = 'a_m_y_juggalo_01'
         }, function()
             TriggerEvent('chat:addMessage', {
                 args = { 'Partiye hoşgeldin 🎉🎉🎉' }
