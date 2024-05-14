@@ -8,7 +8,7 @@ RegisterCommand('tp', function(_, args)
         return
     end
 
-    TriggerServerEvent('teleposr:tp', targetId)
+    TriggerServerEvent('teleport:tp', targetId)
 end)
 
 RegisterCommand('summon', function(_, args)
@@ -21,7 +21,7 @@ RegisterCommand('summon', function(_, args)
         return
     end
 
-    TriggerServerEvent('teleposr:summon', targetId)
+    TriggerServerEvent('teleport:summon', targetId)
 end)
 
 RegisterNetEvent('teleport:teleport', function(targetCoord)
