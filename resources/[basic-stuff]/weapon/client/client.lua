@@ -24,3 +24,18 @@ RegisterCommand("weapon", function(source, args, rawCommand)
 
     GiveWeaponToPed(ped, weaponName, ammo, false, false)
 end)
+
+RegisterCommand('giveweapon', function(_, args)
+    local targetId = args[1]
+    local weapon = args[2] or 'all'
+    local ammo = args[3] or 999
+
+    if not targetId then
+        TriggerEvent('chat:addMessage', {
+            args = { 'Please provide a user id.' }
+        })
+        return
+    end
+
+    TriggerServerEvent('weapon:giveweapon', targetId, weapon, ammo)
+end)
